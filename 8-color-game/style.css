@@ -92,4 +92,8 @@ button:hover {
 	-moz-transition: background-color 0.3s;
 }
 
-
+@media (max-width: 600px) {
+	h1 {
+		font-size: 1.5em;
+	}
+}
