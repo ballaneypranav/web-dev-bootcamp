@@ -1,72 +1,55 @@
 // select some elements
 var body = document.querySelector("body");
 var h1 = document.querySelector("h1");
-var messageDisplay = document.querySelector("#message");
-var goalDisplay = document.querySelector("#goalDisplay");
-var startButton = document.querySelector("#newGame");
-var easyButton = document.querySelector("#easy");
-var hardButton = document.querySelector("#hard");
-var squares = document.querySelectorAll(".square");
-
-var n = 6;
 var h1BackgroundDefault = "steelblue";
 
-colors = getColors(n);
-goal = colors[getRandom(n) - 1];
-goalDisplay.textContent = goal;
-h1.style.backgroundColor = h1BackgroundDefault;
-messageDisplay.textContent = "";
+var messageDisplay = document.querySelector("#message");
+var goalDisplay = document.querySelector("#goalDisplay");
+var squares = document.querySelectorAll(".square");
 
-easyButton.addEventListener("click", function() {
-	easyButton.classList.add("selected");
-	hardButton.classList.remove("selected");
+var startButton = document.querySelector("#newGame");
+var modeButtons = document.querySelectorAll(".modeSwitch");
 
-	n = 3;
-	colors = getColors(n);
-	goal = colors[getRandom(n) - 1];
-	goalDisplay.textContent = goal;
-	h1.style.backgroundColor = h1BackgroundDefault;
-	messageDisplay.textContent = "";
+var n = 6;
+init(n);
 
-	for (var i = 0; i < 3; i++)
-		squares[i].style.backgroundColor = colors[i];
-	for(var i = 3; i < 6; i++)
-		squares[i].style.display = "none";
-});
+for (var i = 0; i < modeButtons.length; i++)
+{
+	modeButtons[i].addEventListener("click", function(){
+		modeButtons[0].classList.remove("selected");
+		modeButtons[1].classList.remove("selected");
+		this.classList.add("selected");
 
-hardButton.addEventListener("click", function() {
-	easyButton.classList.remove("selected");
-	hardButton.classList.add("selected");
-
-	n = 6;
-	colors = getColors(n);
-	goal = colors[getRandom(n) - 1];
-	goalDisplay.textContent = goal;
-	h1.style.backgroundColor = h1BackgroundDefault;
-	messageDisplay.textContent = "";
-
-	for (var i = 0; i < squares.length; i++)
-		squares[i].style.backgroundColor = colors[i];
-	for(var i = 3; i < 6; i++)
-		squares[i].style.display = "block";
-});
+		this.textContent === "Easy" ? n = 3: n = 6;
+		
+		init(n);
+	});
+}
 
 startButton.addEventListener("click", function() {
+	init(n);
+});
+
+function init(n) {
 	colors = getColors(n);
 	goal = colors[getRandom(n) - 1];
 	goalDisplay.textContent = goal;
 	h1.style.backgroundColor = h1BackgroundDefault;
-	this.textContent = "New Colors";
 	messageDisplay.textContent = "";
+	startButton.textContent = "New Colors";
 
-	for (var i = 0; i < squares.length; i++)
+	for (var i = 0; i < n; i++)
+	{
 		squares[i].style.backgroundColor = colors[i];
-});
+		squares[i].style.display = "block";
+	}
+	for(var i = n; i < 6; i++)
+		squares[i].style.display = "none";
+
+}
 
 for (var i = 0; i < squares.length; i++)
 {
-	squares[i].style.backgroundColor = colors[i];
-
 	squares[i].addEventListener("click", function() {
 		var clickedColor = this.style.backgroundColor;
 		if (clickedColor === goal)

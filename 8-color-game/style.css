@@ -73,6 +73,7 @@ button:hover {
 
 #message {
 	line-height: 30px;
+	text-transform: none;
 }
 
 #container {
