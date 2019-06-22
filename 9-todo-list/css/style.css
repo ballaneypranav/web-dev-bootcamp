@@ -65,6 +65,13 @@ li:hover > span.delete {
 	display: none !important;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+	box-shadow: none!important;
+}
+
 @media (max-width: 600px) {
 
 	.card {
