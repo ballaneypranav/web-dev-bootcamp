@@ -3,7 +3,9 @@ html, body {
 }
 
 body {
-	background: url("../img/joanna-kosinska-289519-unsplash.jpg") center center / cover;
+	background: url("../img/joanna-kosinska-289519-unsplash.jpg") center center;
+	background-size: cover;
+	background-color: #112440 !important;
 }
 
 #wrapper {
@@ -13,4 +15,19 @@ body {
 
 h1.display-4 {
 	font-size: 2rem;
+}
+
+.card {
+	width: 25rem;
+}
+
+@media (max-width: 600px) {
+	body {
+		background-position: -250px;
+	}
+
+	.card {
+		width: 20rem;
+	}
+
 }
