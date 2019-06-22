@@ -22,9 +22,6 @@ h1.display-4 {
 }
 
 @media (max-width: 600px) {
-	body {
-		background-position: -250px;
-	}
 
 	.card {
 		width: 23rem;
