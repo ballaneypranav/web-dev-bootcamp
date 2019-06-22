@@ -16,21 +16,44 @@
 
 <body>
 	<div id="wrapper" class="container d-flex justify-content-around align-items-center">
-		<div class="filler d-none d-md-block"></div>
-		<div class="card">
-			<div class="card-header">
-				<h1 class="display-4">To-do List</h1>
+		<!-- <div class="filler d-none d-md-block"></div> -->
+		<div id="card-wrapper">
+			<div id="card-header">
+				<h1 class="display-4 pb-3 text-white">To-do List</h1>
+				
 			</div>
-			<ul class="list-group list-group-flush">
-				<li class="list-group-item">Cras justo odio</li>
-				<li class="list-group-item">Dapibus ac facilisis in</li>
-				<li class="list-group-item">Vestibulum at eros</li>
-			</ul>
+			<div class="card">
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item px-0">
+						<input type="text" name="new-todo" id="new-todo" placeholder="Add New To-do"
+							class="form-control">
+					</li>
+					<li class="list-group-item d-flex justify-content-between">
+						<span class="done d-flex align-items-center"><i class="far fa-square"></i></span> 
+						<p>Go to potions class</p>
+						<span class="delete"><i class="fas fa-trash"></i></span>
+					</li>
+					<li class="list-group-item d-flex justify-content-between">
+						<span class="done"><i class="far fa-square"></i></span> 
+						<p>Buy new robes</p>
+						<span class="delete"><i class="fas fa-trash"></i></span>
+					</li>
+					<li class="list-group-item d-flex justify-content-between">
+						<span class="done"><i class="far fa-square"></i></span> 
+						<p>Visit Hagrid</p>
+						<span class="delete"><i class="fas fa-trash"></i></span>
+					</li>
+					
+				</ul>
+			</div>
 		</div>
 	</div>
 
 	<!-- Unsplash Credits -->
-	<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-size:12px;line-height:1.2;border-radius:3px;position:absolute;z-index: 1;bottom:20px;right:20px" href="https://unsplash.com/@joannakosinska?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Joanna Kosinska"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Joanna Kosinska</span></a>
+	<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-size:12px;line-height:1.2;border-radius:3px;position:absolute;z-index: 1;bottom:20px;right:20px"href="https://unsplash.com/@joannakosinska?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"target="_blank" rel="noopener noreferrer"title="Download free do whatever you want high-resolution photos from Joanna Kosinska"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title>	<path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Joanna Kosinska</span></a>
+
+	<script src="https://kit.fontawesome.com/0f6efabd1b.js"></script>
+
 </body>
 
 </html>

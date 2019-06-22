@@ -3,7 +3,7 @@ html, body {
 }
 
 body {
-	background: url("../img/joanna-kosinska-289519-unsplash.jpg") center center;
+	/* background: url("../img/joanna-kosinska-289519-unsplash.jpg") center center; */
 	background-size: cover;
 	background-color: #112440 !important;
 }
@@ -14,17 +14,61 @@ body {
 }
 
 h1.display-4 {
-	font-size: 2rem;
+	font-size: 3rem;
 }
 
 .card {
 	width: 25rem;
 }
 
+li.todo-input {
+	padding: 0;
+}
+
+#new-todo {
+	width: 100%;
+	border: none;
+	padding: .75rem 1.25rem;
+}
+
+li span {
+	width: 10%;
+	display: flex;
+	align-items: center;
+}
+
+li p {
+	width: 100%;
+	margin: 0;
+}
+
+li span.delete {
+	opacity: 0;
+	color: #e60000;
+	width: 5%;
+}
+
+li:hover > span.delete {
+	opacity: 1;
+	transition: all 0.5s;
+}
+
+.checked p {
+	text-decoration: line-through;
+}
+
+.checked {
+	color: #b8b8b8;
+}
+
+.deleted {
+	display: none !important;
+}
+
 @media (max-width: 600px) {
 
 	.card {
-		width: 22rem;
+		width: 21rem;
 	}
 
 }
